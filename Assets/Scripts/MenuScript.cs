@@ -22,6 +22,7 @@ public class MenuScript : MonoBehaviour
             }
         }
     }
+
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
@@ -38,6 +39,7 @@ public class MenuScript : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
