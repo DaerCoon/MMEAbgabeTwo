@@ -123,6 +123,39 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &530210683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 530210684}
+  m_Layer: 0
+  m_Name: Skalierer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &530210684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530210683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children:
+  - {fileID: 7547013232531496513}
+  - {fileID: 534125859}
+  - {fileID: 1361595070}
+  m_Father: {fileID: 1010511724}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &534125859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3303108643785293275, guid: aa262e451536f47479a19842040e7b9a, type: 3}
@@ -411,8 +444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SerializedLibrary: {fileID: 11400000, guid: 65e405bdeb3e04041bbafdae32ec11ac, type: 2}
-  m_MaxNumberOfMovingImages: 0
-  m_TrackedImagePrefab: {fileID: 7225137089513006616, guid: aa262e451536f47479a19842040e7b9a, type: 3}
+  m_MaxNumberOfMovingImages: 1
+  m_TrackedImagePrefab: {fileID: 0}
 --- !u!850595691 &903448832
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -547,7 +580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1010511724
 Transform:
   m_ObjectHideFlags: 0
@@ -559,9 +592,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7547013232531496513}
-  - {fileID: 1361595070}
-  - {fileID: 534125859}
+  - {fileID: 530210684}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -574,6 +605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1361595070}
+  - component: {fileID: 1361595071}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -592,15 +624,29 @@ Transform:
   m_LocalPosition: {x: 0, y: 9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1010511724}
-  m_RootOrder: 1
+  m_Father: {fileID: 530210684}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1361595071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361595069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea0c24a6617acf489b94076ca35975a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPrefab: {fileID: 6516265061909723095, guid: 4a80f9c5e0bace446adc537f982f0666, type: 3}
+  parent: {fileID: 1361595070}
 --- !u!1001 &5493629335694248690
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1010511724}
+    m_TransformParent: {fileID: 530210684}
     m_Modifications:
     - target: {fileID: 2493277035245499245, guid: aa262e451536f47479a19842040e7b9a, type: 3}
       propertyPath: movementSpeed
@@ -636,7 +682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3303108643785293275, guid: aa262e451536f47479a19842040e7b9a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3303108643785293275, guid: aa262e451536f47479a19842040e7b9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -662,7 +708,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1010511724}
+    m_TransformParent: {fileID: 530210684}
     m_Modifications:
     - target: {fileID: 7547013233169294667, guid: 3e7bedf333ec8434793cdefe85ac7ee9, type: 3}
       propertyPath: m_Name

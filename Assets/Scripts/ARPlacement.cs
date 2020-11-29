@@ -8,7 +8,7 @@ public class ARPlacement : MonoBehaviour
 {
     [SerializeField] ARTrackedImageManager _trackedImageManager;
     [SerializeField] GameObject _content;
-    private void Start()
+    private void Awake()
     {
         if (!_trackedImageManager)
         {
@@ -35,7 +35,9 @@ public class ARPlacement : MonoBehaviour
             minLocalScalar);
             _content.transform.parent = trackedImage.transform;
             _content.transform.localScale = Vector3.one;
+            _content.SetActive(true);
         }
+
 
     }
 }
